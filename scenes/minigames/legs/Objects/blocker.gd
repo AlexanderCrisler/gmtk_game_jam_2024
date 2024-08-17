@@ -62,4 +62,7 @@ func _input(ev):
 		
 
 func _on_area_2d_area_entered(area):
-	$"..".incrementBlocks()
+	if leftSide:
+		$"..".incrementLeft()
+	else:
+		$"..".incrementRight()

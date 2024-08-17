@@ -26,5 +26,6 @@ leftSide = false
 
 [node name="Center2" parent="." instance=ExtResource("3_2i88y")]
 position = Vector2(800, 300)
+left = false
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
