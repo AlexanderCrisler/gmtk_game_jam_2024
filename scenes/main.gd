@@ -40,4 +40,4 @@ func _on_core_pressed():
 
 
 func _on_legs_pressed():
-	get_tree().change_scene_to_file("res://scenes/minigames/legs/legs_scene.tscn")
+	global.goto_scene("res://scenes/minigames/legs/legs_scene.tscn")

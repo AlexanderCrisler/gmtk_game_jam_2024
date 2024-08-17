@@ -4,6 +4,7 @@ var left = 0
 var right = 0
 var leftDestroyed = false
 var rightDestroyed = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -18,7 +19,7 @@ func destroyLeft():
 	$Center.queue_free()
 	leftDestroyed = true
 	if rightDestroyed:
-		print("game over")
+		gameOver()
 	#print(hits)
 func destroyRight():
 	$Spawner2.queue_free()
@@ -26,9 +27,13 @@ func destroyRight():
 	$Center2.queue_free()
 	rightDestroyed = true
 	if leftDestroyed:
-		print("game over")
-		get_tree().change_scene_to_file("res://scenes/main.tscn")
+		gameOver()
 func incrementLeft():
 	left +=1
 func incrementRight():
 	right +=1
+func gameOver():
+	print("game over")
+	global.increaseLegs(left,right)
+	global.goto_scene("res://scenes/main.tscn")
+	
