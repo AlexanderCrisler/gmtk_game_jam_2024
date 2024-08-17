@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvt1h0uawgwlc"]
+
+[ext_resource type="Script" path="res://scenes/minigames/legs/Objects/timer.gd" id="1_lcdti"]
+
+[node name="Spawner" type="Node2D"]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+script = ExtResource("1_lcdti")
+
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

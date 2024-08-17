@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://2el15lumkfpa"]
+
+[ext_resource type="Script" path="res://scenes/minigames/legs/Objects/blocker.gd" id="1_ftuxd"]
+[ext_resource type="Texture2D" uid="uid://bpht8h0irg3wu" path="res://Assets/square.png" id="2_3qd73"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a2px1"]
+size = Vector2(569, 117)
+
+[node name="Blocker" type="AnimatableBody2D"]
+position = Vector2(437, 294)
+scale = Vector2(0.15, 0.15)
+script = ExtResource("1_ftuxd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.16675, -1)
+shape = SubResource("RectangleShape2D_a2px1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.00012207, 3.05176e-05)
+texture = ExtResource("2_3qd73")
+offset = Vector2(-2.66699, -1.50006)
