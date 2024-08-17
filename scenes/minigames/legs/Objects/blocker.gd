@@ -18,11 +18,6 @@ func _ready():
 	downPos= startPos + Vector2(0,offset)
 	set_position(upPos)
 	
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 	
 func _input(ev):
 	if leftSide:
