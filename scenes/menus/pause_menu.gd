@@ -26,7 +26,7 @@ func _on_continue_pressed() -> void:
 
 func _on_main_menu_pressed() -> void:
 	game_manager.game_paused = false
-	get_tree().change_scene_to_file("res://start_screen.tscn")
+	get_tree().change_scene_to_file("res://scenes/menus/start_screen.tscn")
 
 
 func _on_exit_game_pressed() -> void:
