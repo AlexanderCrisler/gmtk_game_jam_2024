@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://perwqrm2w4x5"]
+
+[ext_resource type="Script" path="res://scenes/minigames/legs/Objects/arrow.gd" id="1_d22ob"]
+[ext_resource type="Texture2D" uid="uid://b1wri13lmjg46" path="res://Assets/arrow.png" id="1_rpsgf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxx4t"]
+size = Vector2(138, 158.167)
+
+[node name="Arrow" type="Node2D"]
+scale = Vector2(0.15, 0.15)
+script = ExtResource("1_d22ob")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-6.67572e-05, -3.16665)
+texture = ExtResource("1_rpsgf")
+offset = Vector2(-7.66663, 103.333)
+
+[node name="AreaBody2D" type="Area2D" parent="."]
+position = Vector2(-466.667, -249.833)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBody2D"]
+position = Vector2(469, 204.083)
+shape = SubResource("RectangleShape2D_yxx4t")
+
+[connection signal="area_entered" from="AreaBody2D" to="." method="_on_static_body_2d_area_entered"]
