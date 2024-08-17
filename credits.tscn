@@ -57,7 +57,8 @@ layout_mode = 2
 
 [node name="Name" type="Label" parent="ColorRect/CenterContainer/VBoxContainer/John"]
 layout_mode = 2
-text = "John <LastName>"
+text = "Jon Heinze
+"
 label_settings = SubResource("LabelSettings_p5xf1")
 horizontal_alignment = 1
 
