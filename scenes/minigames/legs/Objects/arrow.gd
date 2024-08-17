@@ -1,7 +1,9 @@
 extends Node2D
 
-var direction = 1
-var offset = 180
+@onready var offset = 180
+var direction
+var speed = 2
+var mainScene
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	direction = int(randf_range(-2,3))
@@ -17,8 +19,17 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if(direction == 1 or direction == -1):
-		position = Vector2(position.x + direction, position.y)
+		position = Vector2(position.x + direction*speed, position.y)
 	if(direction == 2):
-		position = Vector2(position.x, position.y +1)
+		position = Vector2(position.x, position.y +1*speed)
 	if(direction == 0):
-		position = Vector2(position.x, position.y -1)
+		position = Vector2(position.x, position.y -1*speed)
+
+
+func _on_static_body_2d_area_entered(area):
+	if area.is_in_group("Blocker"):
+		
+		queue_free()
+		
+	if area.is_in_group("Center"):
+		queue_free()
