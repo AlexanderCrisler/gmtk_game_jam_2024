@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d24l3kfs8fkkk"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_xve4p"]
+[ext_resource type="PackedScene" uid="uid://bfjk68jfwv27p" path="res://scenes/menus/pause_menu.tscn" id="2_q48sq"]
+
+[node name="Main" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_xve4p")
+
+[node name="PauseMenu" parent="." node_paths=PackedStringArray("game_manager") instance=ExtResource("2_q48sq")]
+offset_left = 576.0
+offset_top = 328.0
+offset_right = 576.0
+offset_bottom = 328.0
+game_manager = NodePath("..")
