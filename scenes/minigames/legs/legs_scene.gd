@@ -27,6 +27,7 @@ func destroyRight():
 	rightDestroyed = true
 	if leftDestroyed:
 		print("game over")
+		get_tree().change_scene_to_file("res://scenes/main.tscn")
 func incrementLeft():
 	left +=1
 func incrementRight():
