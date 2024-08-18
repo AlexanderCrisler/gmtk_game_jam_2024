@@ -17,11 +17,14 @@ func _input(event : InputEvent):
 		game_paused = !game_paused
 		
 
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	print("ready ran")
+	if global.armsDone and global.legsDone and global.coreDone:
+		global.armsDone = false
+		global.legsDone = false
+		global.coreDone = false
+		global.current_round +=1
+		#This is where we would run whatever happens between rounds 
 
 
 
@@ -32,13 +35,19 @@ func _process(delta: float) -> void:
 
 
 func _on_arms_pressed():
-	pass
+	if !global.armsDone:
+		global.armsDone = true
+	
 
 
 func _on_core_pressed():
-	global.goto_scene("res://scenes/minigames/core/balance.tscn")
-	pass # Replace with function body.
+  if !global.coreDone:
+		global.coreDone = true
+	  global.goto_scene("res://scenes/minigames/core/balance.tscn")
+	
 
 
 func _on_legs_pressed():
-	global.goto_scene("res://scenes/minigames/legs/legs_scene.tscn")
+	if !global.legsDone:
+		global.legsDone = true
+		global.goto_scene("res://scenes/minigames/legs/legs_scene.tscn")
