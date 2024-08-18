@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4kd6122kfv3h"]
+
+[ext_resource type="Script" path="res://scenes/minigames/arms/arms.gd" id="1_intui"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bgxlr"]
+font_size = 100
+
+[node name="Arms" type="Node2D"]
+script = ExtResource("1_intui")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 362.0
+offset_top = 254.0
+offset_right = 742.0
+offset_bottom = 391.0
+text = "Press W"
+label_settings = SubResource("LabelSettings_bgxlr")
