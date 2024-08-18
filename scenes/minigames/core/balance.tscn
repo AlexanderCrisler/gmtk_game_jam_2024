@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlnt3fync0bce"]
+
+[ext_resource type="Script" path="res://scenes/minigames/core/balance.gd" id="1_17r0s"]
+[ext_resource type="Texture2D" uid="uid://xu3qnithxe44" path="res://fyrfho4v.bmp" id="1_shw8w"]
+[ext_resource type="Script" path="res://scenes/minigames/core/balance_player.gd" id="3_4x8wg"]
+[ext_resource type="Texture2D" uid="uid://b1qkc45b7hqhb" path="res://icon.svg" id="4_lbarh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_y8421"]
+font_size = 66
+
+[node name="Balance" type="Node2D" node_paths=PackedStringArray("body_builder", "indicator")]
+script = ExtResource("1_17r0s")
+body_builder = NodePath("BalancePlayer")
+indicator = NodePath("Indicator")
+
+[node name="BalancePlayer" type="Sprite2D" parent="."]
+position = Vector2(580, 481)
+scale = Vector2(0.751953, 0.785156)
+texture = ExtResource("1_shw8w")
+offset = Vector2(-1.3299, -256)
+script = ExtResource("3_4x8wg")
+
+[node name="Indicator" type="Sprite2D" parent="."]
+position = Vector2(580, 468)
+scale = Vector2(0.363282, 0.378906)
+texture = ExtResource("4_lbarh")
+offset = Vector2(2.75281, -1066.23)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 464.0
+offset_top = 525.0
+offset_right = 694.0
+offset_bottom = 607.0
+text = "0"
+label_settings = SubResource("LabelSettings_y8421")
+horizontal_alignment = 1
+vertical_alignment = 1
