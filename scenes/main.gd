@@ -36,6 +36,7 @@ func _on_arms_pressed():
 
 
 func _on_core_pressed():
+	global.goto_scene("res://scenes/minigames/core/balance.tscn")
 	pass # Replace with function body.
 
 

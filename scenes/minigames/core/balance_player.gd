@@ -39,6 +39,9 @@ func _physics_process(delta: float) -> void:
 
 	rotation_around_point += rate_of_rotation
 	acceleration += acceleration * delta * timer
-	timer += delta
+	if global.abs > 0:
+		timer += delta / (global.abs/5)
+	else:
+		timer += delta
 	
 	global_rotation = deg_to_rad(rotation_around_point)
