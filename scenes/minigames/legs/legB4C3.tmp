@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgfdvbdut537k"]
+
+[ext_resource type="PackedScene" uid="uid://2el15lumkfpa" path="res://scenes/minigames/legs/Objects/Blocker.tscn" id="1_c6kh7"]
+[ext_resource type="PackedScene" uid="uid://bvt1h0uawgwlc" path="res://scenes/minigames/legs/Objects/Spawner.tscn" id="2_xcfjd"]
+[ext_resource type="PackedScene" uid="uid://ckwy2747gh7gt" path="res://scenes/minigames/legs/Objects/Center.tscn" id="3_2i88y"]
+[ext_resource type="PackedScene" uid="uid://bfhs6167rcb03" path="res://scenes/minigames/legs/Objects/Blocker2.tscn" id="4_u7s40"]
+
+[node name="LegsScene" type="Node2D"]
+
+[node name="Blocker" parent="." instance=ExtResource("1_c6kh7")]
+position = Vector2(300, 300)
+
+[node name="Spawner" parent="." instance=ExtResource("2_xcfjd")]
+position = Vector2(300, 300)
+
+[node name="Center" parent="." instance=ExtResource("3_2i88y")]
+position = Vector2(300, 300)
+
+[node name="Blocker2" parent="." instance=ExtResource("4_u7s40")]
+position = Vector2(800, 300)
+
+[node name="Spawner2" parent="." instance=ExtResource("2_xcfjd")]
+position = Vector2(800, 300)
+
+[node name="Center2" parent="." instance=ExtResource("3_2i88y")]
+position = Vector2(800, 300)

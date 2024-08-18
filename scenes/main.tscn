@@ -49,3 +49,7 @@ offset_right = -376.0
 offset_bottom = 304.0
 game_manager = NodePath("..")
 metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="VBoxContainer/Arms" to="." method="_on_arms_pressed"]
+[connection signal="pressed" from="VBoxContainer/Core" to="." method="_on_core_pressed"]
+[connection signal="pressed" from="VBoxContainer/Legs" to="." method="_on_legs_pressed"]
