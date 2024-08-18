@@ -41,9 +41,9 @@ func _on_arms_pressed():
 
 
 func _on_core_pressed():
-  if !global.coreDone:
+	if !global.coreDone:
 		global.coreDone = true
-	  global.goto_scene("res://scenes/minigames/core/balance.tscn")
+		global.goto_scene("res://scenes/minigames/core/balance.tscn")
 	
 
 
