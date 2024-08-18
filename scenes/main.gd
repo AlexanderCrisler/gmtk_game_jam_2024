@@ -37,6 +37,7 @@ func _process(delta: float) -> void:
 func _on_arms_pressed():
 	if !global.armsDone:
 		global.armsDone = true
+		global.goto_scene("res://scenes/minigames/arms/arms.tscn")
 	
 
 
