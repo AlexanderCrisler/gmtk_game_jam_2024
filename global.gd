@@ -2,14 +2,15 @@ extends Node
 
 var leftLeg = 0 
 var rightLeg = 0
+var abs = 0
 var current_scene = null
-
 
 
 func _ready():
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
-	
+
+
 func increaseLegs(left, right):
 	leftLeg += left
 	rightLeg += right
@@ -17,8 +18,13 @@ func increaseLegs(left, right):
 	print("right ", rightLeg)
 
 
+func increaseAbs(score):
+	abs += score
+
+
 func goto_scene(path):
 	call_deferred("_deferred_goto_scene", path)
+
 
 func _deferred_goto_scene(path):
 	# It is now safe to remove the current scene.
