@@ -3,6 +3,10 @@ extends Node
 var leftLeg = 0 
 var rightLeg = 0
 var current_scene = null
+var current_round = 1
+var legsDone = false
+var coreDone = false
+var armsDone = false
 
 
 
