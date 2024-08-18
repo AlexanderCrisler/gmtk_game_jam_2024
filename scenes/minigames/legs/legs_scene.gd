@@ -28,12 +28,11 @@ func destroyRight():
 		
 func incrementLeft():
 	left +=1
-	addScore()
+	$Label.text = str(left)
 	
 func incrementRight():
 	right +=1
-	addScore()
-	
+	$Label2.text = str(right)
 func gameOver():
 	print("game over")
 	global.increaseLegs(left,right)
@@ -41,6 +40,6 @@ func gameOver():
 
 func addScore():
 	score +=1
-	$Label.text = str(score)
+	
 	
 	
