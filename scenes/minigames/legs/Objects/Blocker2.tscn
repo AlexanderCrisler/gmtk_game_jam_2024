@@ -57,7 +57,7 @@ func _input(ev):
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a2px1"]
 size = Vector2(569, 117)
 
-[node name="Blocker" type="Node2D"]
+[node name="Blocker2" type="Node2D"]
 position = Vector2(437, 294)
 scale = Vector2(0.15, 0.15)
 script = SubResource("GDScript_k8a8e")
