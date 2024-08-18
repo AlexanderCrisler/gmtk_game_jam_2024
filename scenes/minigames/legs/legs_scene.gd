@@ -8,11 +8,7 @@ var rightDestroyed = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	
 func destroyLeft():
 	$Blocker.queue_free()
 	$Spawner.queue_free()
@@ -20,7 +16,7 @@ func destroyLeft():
 	leftDestroyed = true
 	if rightDestroyed:
 		gameOver()
-	#print(hits)
+	
 func destroyRight():
 	$Spawner2.queue_free()
 	$Blocker2.queue_free()
@@ -28,10 +24,13 @@ func destroyRight():
 	rightDestroyed = true
 	if leftDestroyed:
 		gameOver()
+		
 func incrementLeft():
 	left +=1
+	
 func incrementRight():
 	right +=1
+	
 func gameOver():
 	print("game over")
 	global.increaseLegs(left,right)

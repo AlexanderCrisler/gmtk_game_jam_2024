@@ -13,9 +13,10 @@ func _ready():
 func increaseLegs(left, right):
 	leftLeg += left
 	rightLeg += right
-	print("left ",left)
-	print("right ", right)
-	
+	print("left ",leftLeg)
+	print("right ", rightLeg)
+
+
 func goto_scene(path):
 	call_deferred("_deferred_goto_scene", path)
 
