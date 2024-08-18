@@ -4,6 +4,7 @@ var left = 0
 var right = 0
 var leftDestroyed = false
 var rightDestroyed = false
+var score = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,12 +28,19 @@ func destroyRight():
 		
 func incrementLeft():
 	left +=1
+	addScore()
 	
 func incrementRight():
 	right +=1
+	addScore()
 	
 func gameOver():
 	print("game over")
 	global.increaseLegs(left,right)
 	global.goto_scene("res://scenes/main.tscn")
+
+func addScore():
+	score +=1
+	$Label.text = str(score)
+	
 	

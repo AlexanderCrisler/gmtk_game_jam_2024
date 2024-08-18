@@ -19,6 +19,7 @@ position = Vector2(300, 300)
 
 [node name="Spawner2" parent="." instance=ExtResource("2_xcfjd")]
 position = Vector2(800, 300)
+isLeft = false
 
 [node name="Blocker2" parent="." instance=ExtResource("1_c6kh7")]
 position = Vector2(800, 300)
@@ -27,5 +28,12 @@ leftSide = false
 [node name="Center2" parent="." instance=ExtResource("3_2i88y")]
 position = Vector2(800, 300)
 left = false
+
+[node name="Label" type="Label" parent="."]
+offset_left = 503.0
+offset_top = 107.0
+offset_right = 564.0
+offset_bottom = 130.0
+text = "0"
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
