@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://d24l3kfs8fkkk"]
+[gd_scene load_steps=5 format=3 uid="uid://d24l3kfs8fkkk"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_xve4p"]
 [ext_resource type="PackedScene" uid="uid://bfjk68jfwv27p" path="res://scenes/menus/pause_menu.tscn" id="2_q48sq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0oshy"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_bgyye"]
+font_size = 20
 
 [node name="Main" type="Node2D"]
 process_mode = 3
@@ -49,6 +55,114 @@ offset_right = -376.0
 offset_bottom = 304.0
 game_manager = NodePath("..")
 metadata/_edit_lock_ = true
+
+[node name="Text" type="Node" parent="."]
+
+[node name="Week" type="Label" parent="Text"]
+offset_left = 28.0
+offset_top = 27.0
+offset_right = 113.0
+offset_bottom = 72.0
+text = "Week"
+label_settings = SubResource("LabelSettings_0oshy")
+
+[node name="Week number" type="Label" parent="Text/Week"]
+offset_left = 103.0
+offset_right = 146.0
+offset_bottom = 45.0
+text = "1
+"
+label_settings = SubResource("LabelSettings_0oshy")
+
+[node name="Arm Right" type="Label" parent="Text"]
+offset_left = 700.0
+offset_top = 125.0
+offset_right = 797.0
+offset_bottom = 184.0
+text = "Right Arm
+
+"
+label_settings = SubResource("LabelSettings_bgyye")
+
+[node name="Arm Right Number" type="Label" parent="Text/Arm Right"]
+offset_left = 105.0
+offset_right = 145.0
+offset_bottom = 28.0
+text = "0
+"
+label_settings = SubResource("LabelSettings_bgyye")
+
+[node name="Arm Left" type="Label" parent="Text"]
+offset_left = 300.0
+offset_top = 125.0
+offset_right = 384.0
+offset_bottom = 153.0
+text = "Left Arm
+"
+label_settings = SubResource("LabelSettings_bgyye")
+
+[node name="Arm Left Number" type="Label" parent="Text/Arm Left"]
+offset_left = 95.0
+offset_right = 135.0
+offset_bottom = 28.0
+text = "0
+"
+label_settings = SubResource("LabelSettings_bgyye")
+
+[node name="Leg Right" type="Label" parent="Text"]
+offset_left = 700.0
+offset_top = 325.0
+offset_right = 789.0
+offset_bottom = 353.0
+text = "Right Leg"
+label_settings = SubResource("LabelSettings_bgyye")
+
+[node name="Leg Right Number" type="Label" parent="Text/Leg Right"]
+offset_left = 100.0
+offset_right = 140.0
+offset_bottom = 28.0
+text = "0
+"
+label_settings = SubResource("LabelSettings_bgyye")
+
+[node name="Leg Left" type="Label" parent="Text"]
+offset_left = 300.0
+offset_top = 325.0
+offset_right = 377.0
+offset_bottom = 384.0
+text = "Left Leg
+
+"
+label_settings = SubResource("LabelSettings_bgyye")
+horizontal_alignment = 2
+
+[node name="Leg Left Number" type="Label" parent="Text/Leg Left"]
+offset_left = 85.0
+offset_right = 125.0
+offset_bottom = 59.0
+text = "0
+
+"
+label_settings = SubResource("LabelSettings_bgyye")
+
+[node name="Core" type="Label" parent="Text"]
+offset_left = 478.0
+offset_top = 225.0
+offset_right = 555.0
+offset_bottom = 284.0
+text = "Core
+"
+label_settings = SubResource("LabelSettings_bgyye")
+horizontal_alignment = 2
+
+[node name="Core Number" type="Label" parent="Text/Core"]
+offset_left = 85.0
+offset_right = 125.0
+offset_bottom = 59.0
+text = "0
+
+"
+label_settings = SubResource("LabelSettings_bgyye")
 
 [connection signal="pressed" from="VBoxContainer/Arms" to="." method="_on_arms_pressed"]
 [connection signal="pressed" from="VBoxContainer/Core" to="." method="_on_core_pressed"]

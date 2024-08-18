@@ -25,6 +25,8 @@ func _ready() -> void:
 		global.coreDone = false
 		global.current_round +=1
 		#This is where we would run whatever happens between rounds 
+	updateUI()
+	
 
 
 
@@ -32,7 +34,21 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
+func updateUI():
+	
+	$"Text/Week/Week number".text = str(global.current_round)
+	$"Text/Arm Right/Arm Right Number".text = str(global.rightArm)
+	$"Text/Arm Left/Arm Left Number".text = str(global.leftArm)
+	$"Text/Core/Core Number".text = str(global.abs)
+	$"Text/Leg Right/Leg Right Number".text = str(global.rightLeg)
+	$"Text/Leg Left/Leg Left Number".text = str(global.leftLeg)
+	
+	if global.armsDone:
+		$VBoxContainer/Arms.disabled = true
+	if global.coreDone:
+		$VBoxContainer/Core.disabled = true
+	if global.legsDone:
+		$VBoxContainer/Legs.disabled = true
 
 func _on_arms_pressed():
 	if !global.armsDone:
