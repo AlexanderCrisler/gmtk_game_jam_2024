@@ -47,6 +47,7 @@ horizontal_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="Score2"]
 show_behind_parent = true
+layout_mode = 0
 offset_left = -18.0
 offset_top = -6.0
 offset_right = 22.0
@@ -66,6 +67,7 @@ horizontal_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="Score3"]
 show_behind_parent = true
+layout_mode = 0
 offset_left = -19.0
 offset_top = -6.0
 offset_right = 21.0

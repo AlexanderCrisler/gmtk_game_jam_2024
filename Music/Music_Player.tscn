@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkkfb2tjc4f0w"]
+
+[ext_resource type="AudioStream" uid="uid://c2mtf0jx281ac" path="res://Music/rhythm-upbeat-drive-rock-178420.mp3" id="1_i1sa3"]
+
+[node name="MusicPlayer" type="Node2D"]
+
+[node name="Rhythm-upbeat-drive-rock-178420" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_i1sa3")
+volume_db = 23.215
+autoplay = true
