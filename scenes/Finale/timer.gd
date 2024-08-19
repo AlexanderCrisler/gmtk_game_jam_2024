@@ -7,10 +7,13 @@ var handsUp = preload("res://Assets/judge icon hands up.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	legsValue = int((global.leftLeg+global.rightLeg)/20)
+	
+	#threshold of 200 combined to cap out legs
+	legsValue = int((global.leftLeg+global.rightLeg)/24)
 	if legsValue > 10:
 		legsValue = 10
 		
+	#threshhold of 70 to cap out abs
 	coreValue = int(global.abs/7)
 	if coreValue>10:
 		coreValue = 10
