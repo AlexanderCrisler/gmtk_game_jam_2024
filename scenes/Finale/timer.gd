@@ -9,7 +9,7 @@ var handsUp = preload("res://Assets/judge icon hands up.png")
 func _ready():
 	MusicPlayer.fadeOut()
 	#threshold of 200 combined to cap out legs
-	legsValue = int((global.leftLeg+global.rightLeg)/24)
+	legsValue = int((global.leftLeg+global.rightLeg)/20)
 	if legsValue > 10:
 		legsValue = 10
 		

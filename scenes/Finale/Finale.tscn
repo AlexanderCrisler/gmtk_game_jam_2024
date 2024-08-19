@@ -75,7 +75,7 @@ offset_bottom = 34.0
 scale = Vector2(2, 1)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 2.5
 autostart = true
 script = ExtResource("1_no6b6")
 
