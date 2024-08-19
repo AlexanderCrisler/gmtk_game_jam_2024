@@ -75,6 +75,7 @@ offset_bottom = 34.0
 scale = Vector2(2, 1)
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
 autostart = true
 script = ExtResource("1_no6b6")
 
@@ -92,5 +93,8 @@ texture = ExtResource("2_vvp25")
 position = Vector2(800, 250)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_vvp25")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = 10.0
 
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
