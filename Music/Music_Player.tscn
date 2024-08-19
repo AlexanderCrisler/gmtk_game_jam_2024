@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkkfb2tjc4f0w"]
+
+[ext_resource type="AudioStream" uid="uid://c2mtf0jx281ac" path="res://Music/rhythm-upbeat-drive-rock-178420.mp3" id="1_i1sa3"]
+[ext_resource type="Script" path="res://Music/music_player.gd" id="1_ifwyq"]
+
+[node name="MusicPlayer" type="Node2D"]
+script = ExtResource("1_ifwyq")
+
+[node name="Rhythm-upbeat-drive-rock-178420" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_i1sa3")
+autoplay = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

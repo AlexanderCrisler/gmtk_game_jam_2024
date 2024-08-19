@@ -18,7 +18,7 @@ func _input(event : InputEvent):
 		
 
 func _ready() -> void:
-	print("ready ran")
+	
 	if global.armsDone and global.legsDone and global.coreDone:
 		global.armsDone = false
 		global.legsDone = false
@@ -26,6 +26,8 @@ func _ready() -> void:
 		global.current_round +=1
 		#This is where we would run whatever happens between rounds 
 	updateUI()
+	if global.current_round > 3:
+		global.goto_scene("res://scenes/Finale/Finale.tscn")
 	
 
 

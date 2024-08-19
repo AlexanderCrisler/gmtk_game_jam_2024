@@ -1,0 +1,100 @@
+[gd_scene load_steps=6 format=3 uid="uid://wosrlfvh7wwl"]
+
+[ext_resource type="Script" path="res://scenes/Finale/timer.gd" id="1_no6b6"]
+[ext_resource type="Texture2D" uid="uid://ccygkyhnd3v2j" path="res://Assets/judge icon.png" id="2_vvp25"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ilek6"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8824l"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dcp0i"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="Finale" type="Node2D"]
+
+[node name="Score1" type="Label" parent="."]
+visible = false
+offset_left = 280.0
+offset_top = 120.0
+offset_right = 320.0
+offset_bottom = 143.0
+text = "10
+"
+label_settings = SubResource("LabelSettings_ilek6")
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Score1"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -17.0
+offset_top = -6.0
+offset_right = 23.0
+offset_bottom = 34.0
+scale = Vector2(2, 1)
+
+[node name="Score2" type="Label" parent="."]
+visible = false
+offset_left = 532.0
+offset_top = 120.0
+offset_right = 572.0
+offset_bottom = 143.0
+text = "10
+"
+label_settings = SubResource("LabelSettings_8824l")
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Score2"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -18.0
+offset_top = -6.0
+offset_right = 22.0
+offset_bottom = 34.0
+scale = Vector2(2, 1)
+
+[node name="Score3" type="Label" parent="."]
+visible = false
+offset_left = 780.0
+offset_top = 120.0
+offset_right = 820.0
+offset_bottom = 143.0
+text = "10
+"
+label_settings = SubResource("LabelSettings_dcp0i")
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Score3"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -19.0
+offset_top = -6.0
+offset_right = 21.0
+offset_bottom = 34.0
+scale = Vector2(2, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+script = ExtResource("1_no6b6")
+
+[node name="JudgeIcon" type="Sprite2D" parent="."]
+position = Vector2(300, 250)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_vvp25")
+
+[node name="JudgeIcon2" type="Sprite2D" parent="."]
+position = Vector2(550, 250)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_vvp25")
+
+[node name="JudgeIcon3" type="Sprite2D" parent="."]
+position = Vector2(800, 250)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_vvp25")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = 10.0
+
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

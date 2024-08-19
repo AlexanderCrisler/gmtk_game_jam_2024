@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bvlu55j7dx3ko"
+path="res://.godot/imported/Aww Effect.mp3-8fb84db603ac61117f1632ddb17461db.mp3str"
+
+[deps]
+
+source_file="res://Music/Aww Effect.mp3"
+dest_files=["res://.godot/imported/Aww Effect.mp3-8fb84db603ac61117f1632ddb17461db.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
