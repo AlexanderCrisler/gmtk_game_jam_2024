@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var wait_time : float = 5
+@export var wait_time : float = 4
 
 var time_elapsed = 0
 var labels : Array = []
