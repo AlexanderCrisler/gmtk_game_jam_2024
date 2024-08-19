@@ -10,4 +10,8 @@ script = ExtResource("1_phu4w")
 autostart = true
 script = ExtResource("1_lcdti")
 
+[node name="Label" type="Label" parent="Timer"]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

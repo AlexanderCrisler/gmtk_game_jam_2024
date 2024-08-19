@@ -14,7 +14,7 @@ func _ready() -> void:
 
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file(\"res://scenes/main.tscn\")
+	global.goto_scene(\"res://scenes/main.tscn\")
 	pass # Replace with function body.
 
 
@@ -23,7 +23,7 @@ func _on_options_pressed() -> void:
 
 
 func _on_credits_pressed() -> void:
-	get_tree().change_scene_to_file(\"res://scenes/menus/credits.tscn\")
+	global.goto_scene(\"res://scenes/menus/credits.tscn\")
 	pass # Replace with function body.
 
 
