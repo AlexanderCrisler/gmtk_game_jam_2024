@@ -1,17 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://dlnt3fync0bce"]
+[gd_scene load_steps=12 format=3 uid="uid://dlnt3fync0bce"]
 
 [ext_resource type="Script" path="res://scenes/minigames/core/balance.gd" id="1_17r0s"]
 [ext_resource type="Texture2D" uid="uid://xu3qnithxe44" path="res://fyrfho4v.bmp" id="1_shw8w"]
+[ext_resource type="Texture2D" uid="uid://cdjfo4h1y3vn8" path="res://Assets/Backgrounds/kristina-kashtanova-EwpUsHDmEwg-unsplash.jpg" id="2_rkuu2"]
 [ext_resource type="Script" path="res://scenes/minigames/core/balance_player.gd" id="3_4x8wg"]
-[ext_resource type="Texture2D" uid="uid://b1qkc45b7hqhb" path="res://icon.svg" id="4_lbarh"]
+[ext_resource type="Texture2D" uid="uid://bwnjgk014o4pt" path="res://Assets/arrow_down.png" id="4_8nmsj"]
+[ext_resource type="Texture2D" uid="uid://c7o65t16opguo" path="res://Assets/Keys/A.png" id="6_xhw2x"]
+[ext_resource type="Texture2D" uid="uid://mqyl76l12rpv" path="res://Assets/Keys/D.png" id="7_hcxve"]
+[ext_resource type="Texture2D" uid="uid://ik2lcvxvn2u6" path="res://Assets/Keys/ARROWLEFT.png" id="8_danng"]
+[ext_resource type="Texture2D" uid="uid://bdau405y5qc35" path="res://Assets/Keys/ARROWRIGHT.png" id="9_h1qhu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_y8421"]
 font_size = 66
+
+[sub_resource type="LabelSettings" id="LabelSettings_ehg44"]
+font_size = 60
 
 [node name="Balance" type="Node2D" node_paths=PackedStringArray("body_builder", "indicator")]
 script = ExtResource("1_17r0s")
 body_builder = NodePath("BalancePlayer")
 indicator = NodePath("Indicator")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.77, 0.77, 0.77, 1)
+position = Vector2(607, 915)
+scale = Vector2(0.365415, 0.365415)
+texture = ExtResource("2_rkuu2")
 
 [node name="BalancePlayer" type="Sprite2D" parent="."]
 position = Vector2(580, 481)
@@ -21,17 +35,45 @@ offset = Vector2(-1.3299, -256)
 script = ExtResource("3_4x8wg")
 
 [node name="Indicator" type="Sprite2D" parent="."]
-position = Vector2(580, 468)
+position = Vector2(578, 468)
 scale = Vector2(0.363282, 0.378906)
-texture = ExtResource("4_lbarh")
-offset = Vector2(2.75281, -1066.23)
+texture = ExtResource("4_8nmsj")
+offset = Vector2(8, -1165)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 464.0
-offset_top = 525.0
-offset_right = 694.0
-offset_bottom = 607.0
+offset_left = 443.0
+offset_top = 509.0
+offset_right = 673.0
+offset_bottom = 600.0
 text = "0"
 label_settings = SubResource("LabelSettings_y8421")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Or" type="Label" parent="."]
+offset_left = 88.5
+offset_top = 117.5
+offset_right = 174.5
+offset_bottom = 200.5
+text = "OR"
+label_settings = SubResource("LabelSettings_ehg44")
+
+[node name="A" type="Sprite2D" parent="."]
+position = Vector2(71.5, 72.5)
+scale = Vector2(5, 5)
+texture = ExtResource("6_xhw2x")
+
+[node name="D" type="Sprite2D" parent="."]
+position = Vector2(206.5, 76.5)
+scale = Vector2(5, 5)
+texture = ExtResource("7_hcxve")
+
+[node name="Left" type="Sprite2D" parent="."]
+position = Vector2(69.5, 244.5)
+scale = Vector2(5, 5)
+texture = ExtResource("8_danng")
+
+[node name="Right" type="Sprite2D" parent="."]
+position = Vector2(203.5, 246.5)
+scale = Vector2(5, 5)
+texture = ExtResource("9_h1qhu")

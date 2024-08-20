@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dn8f1b7k6fbf5"]
+[gd_scene load_steps=3 format=3 uid="uid://dn8f1b7k6fbf5"]
+
+[ext_resource type="Texture2D" uid="uid://bbbonxitw3j7v" path="res://Assets/Backgrounds/danielle-cerullo-CQfNt66ttZM-unsplash.jpg" id="1_1f8fj"]
 
 [sub_resource type="GDScript" id="GDScript_3ro3f"]
 script/source = "extends MarginContainer
@@ -40,6 +42,12 @@ theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 100
 script = SubResource("GDScript_3ro3f")
 metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.54, 0.54, 0.54, 1)
+position = Vector2(577, 390)
+scale = Vector2(0.271067, 0.271067)
+texture = ExtResource("1_1f8fj")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
