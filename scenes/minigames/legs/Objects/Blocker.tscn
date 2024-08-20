@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://2el15lumkfpa"]
+[gd_scene load_steps=5 format=3 uid="uid://2el15lumkfpa"]
 
 [ext_resource type="Script" path="res://scenes/minigames/legs/Objects/blocker.gd" id="1_ftuxd"]
 [ext_resource type="Texture2D" uid="uid://bpht8h0irg3wu" path="res://Assets/square.png" id="2_3qd73"]
+[ext_resource type="Texture2D" uid="uid://bs8cnyrnje0yf" path="res://Assets/Character/Shoe.png" id="3_rn6gb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a2px1"]
 size = Vector2(569, 117)
@@ -19,8 +20,15 @@ position = Vector2(-1.16675, -1)
 shape = SubResource("RectangleShape2D_a2px1")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+visible = false
 position = Vector2(0.000244141, 0)
 texture = ExtResource("2_3qd73")
 offset = Vector2(-2.66699, -1.50006)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6.66684, 8.15392e-05)
+scale = Vector2(2, 2)
+texture = ExtResource("3_rn6gb")
+offset = Vector2(-96.6667, -3.33337)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
