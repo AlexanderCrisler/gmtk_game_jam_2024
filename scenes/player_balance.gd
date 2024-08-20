@@ -17,9 +17,9 @@ var rotating_parts : Array
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var rightArmValue = (int(global.rightArm))
+	var rightArmValue = (int(global.rightArm)*2)
 	
-	var leftArmValue = (int(global.leftArm))
+	var leftArmValue = (int(global.leftArm)*2)
 	
 	var leftLegValue
 	leftLegValue = int((global.leftLeg)/10)
