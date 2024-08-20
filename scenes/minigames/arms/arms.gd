@@ -14,6 +14,7 @@ var rightRep_key3
 func _ready():
 	forearmLeft = $"Player/Left forearm"
 	forearmRight = $"Player/Right forearm"
+	
 	InputMap.add_action("leftRep")
 	InputMap.add_action("rightRep")
 	leftRep_key1 = InputEventKey.new()
@@ -25,6 +26,15 @@ func _ready():
 
 
 func _process(delta):
+	if $"Player/Player mid/Left forearm".is_visible_in_tree():
+		forearmLeft = $"Player/Player mid/Left forearm"
+	elif $"Player/Player Buff/Left forearm".is_visible_in_tree():
+		forearmLeft = $"Player/Player Buff/Left forearm"
+		
+	if $"Player/Player mid/Right forearm".is_visible_in_tree():
+		forearmRight = $"Player/Player mid/Right forearm"
+	elif $"Player/Player Buff/Right forearm".is_visible_in_tree():
+		forearmRight = $"Player/Player Buff/Right forearm"
 	
 	# everytime a frame is updates, process runs
 	# anything done in process happens at the framerate

@@ -121,10 +121,11 @@ flip_h = true
 [node name="Left Bicep" type="Sprite2D" parent="Player/Player Buff"]
 visible = false
 z_index = 3
-position = Vector2(550, 253)
+position = Vector2(501, 121)
+rotation = -1.31965
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("13_2qd8h")
-offset = Vector2(-384, -516)
+offset = Vector2(-188, 12)
 
 [node name="ColorRect" type="ColorRect" parent="Player/Player Buff/Left Bicep"]
 visible = false
@@ -138,18 +139,20 @@ color = Color(0.862745, 0.686275, 0.556863, 1)
 
 [node name="Left forearm" type="Sprite2D" parent="Player/Player Buff"]
 visible = false
-position = Vector2(550, 253)
+position = Vector2(487.324, 194.462)
+rotation = -2.60669
 scale = Vector2(0.253, 0.253)
 texture = ExtResource("14_w7lro")
-offset = Vector2(-486.166, -660.079)
+offset = Vector2(2.19974, -158.141)
 
 [node name="Right Bicep" type="Sprite2D" parent="Player/Player Buff"]
 visible = false
 z_index = 3
-position = Vector2(550, 253)
+position = Vector2(605, 121)
+rotation = 1.36735
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("13_2qd8h")
-offset = Vector2(376, -516)
+offset = Vector2(156, 12)
 flip_h = true
 
 [node name="ColorRect" type="ColorRect" parent="Player/Player Buff/Right Bicep"]
@@ -164,10 +167,11 @@ color = Color(0.862745, 0.686275, 0.556863, 1)
 
 [node name="Right forearm" type="Sprite2D" parent="Player/Player Buff"]
 visible = false
-position = Vector2(550, 253)
+position = Vector2(613.466, 187.121)
+rotation = 2.82364
 scale = Vector2(0.253, 0.253)
 texture = ExtResource("14_w7lro")
-offset = Vector2(470.356, -660.079)
+offset = Vector2(-9.75388, -158.369)
 flip_h = true
 
 [node name="Player mid" type="Node2D" parent="Player"]
@@ -194,35 +198,39 @@ flip_h = true
 
 [node name="Left Bicep" type="Sprite2D" parent="Player/Player mid"]
 visible = false
-position = Vector2(552, 244)
+position = Vector2(501, 105)
+rotation = -1.13684
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("10_fg7er")
-offset = Vector2(-328, -492)
+offset = Vector2(-124, 64)
 flip_v = true
 
 [node name="Left forearm" type="Sprite2D" parent="Player/Player mid"]
 visible = false
-position = Vector2(552, 244)
+position = Vector2(500.005, 172.438)
+rotation = -2.39452
 scale = Vector2(0.253, 0.253)
 texture = ExtResource("11_yr1p8")
-offset = Vector2(-509.881, -592.885)
+offset = Vector2(-64.8012, -151.985)
 flip_h = true
 
 [node name="Right Bicep" type="Sprite2D" parent="Player/Player mid"]
 visible = false
-position = Vector2(552, 244)
+position = Vector2(597, 105)
+rotation = 1.09113
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("10_fg7er")
-offset = Vector2(312, -492)
+offset = Vector2(132, 64)
 flip_h = true
 flip_v = true
 
 [node name="Right forearm" type="Sprite2D" parent="Player/Player mid"]
 visible = false
-position = Vector2(552, 244)
+position = Vector2(607.46, 179.112)
+rotation = 2.63077
 scale = Vector2(0.253, 0.253)
 texture = ExtResource("11_yr1p8")
-offset = Vector2(490.119, -592.885)
+offset = Vector2(33.3001, -141.985)
 
 [node name="Chest" type="Sprite2D" parent="Player"]
 position = Vector2(549, 243)
