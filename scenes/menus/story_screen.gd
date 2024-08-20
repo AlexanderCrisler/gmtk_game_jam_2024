@@ -17,9 +17,13 @@ func _ready() -> void:
 	for label in labels:
 		label.hide()
 
-
+func _input(ev):
+	if Input.is_anything_pressed():
+		time_elapsed +=4-int(time_elapsed)%4
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	
 	time_elapsed += delta
 	
 	if time_elapsed <= 0:
