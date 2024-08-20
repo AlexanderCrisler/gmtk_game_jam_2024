@@ -1,7 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://d24l3kfs8fkkk"]
+[gd_scene load_steps=18 format=3 uid="uid://d24l3kfs8fkkk"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_xve4p"]
 [ext_resource type="PackedScene" uid="uid://bfjk68jfwv27p" path="res://scenes/menus/pause_menu.tscn" id="2_q48sq"]
+[ext_resource type="Texture2D" uid="uid://di3dbys3rdmk3" path="res://Assets/Character/Weak/weak_body.png" id="3_0i6uj"]
+[ext_resource type="Script" path="res://scenes/player.gd" id="3_mww1o"]
+[ext_resource type="Texture2D" uid="uid://u35we6rreuxy" path="res://Assets/Character/face.png" id="4_xi8l0"]
+[ext_resource type="Texture2D" uid="uid://bd0e6cjhci1cn" path="res://Assets/Character/Weak/weak_leg.png" id="5_38u4b"]
+[ext_resource type="Texture2D" uid="uid://o813he8ebegg" path="res://Assets/Character/Weak/weak_bicep.png" id="6_2cny1"]
+[ext_resource type="Texture2D" uid="uid://cf7lf78qd3uaa" path="res://Assets/Character/Weak/forearm_and_hand_weak.png" id="7_w26pg"]
+[ext_resource type="Texture2D" uid="uid://csusol0hfvo06" path="res://Assets/Character/Mid/medium_body.png" id="8_sfkf8"]
+[ext_resource type="Texture2D" uid="uid://bethamd3nl828" path="res://Assets/Character/Mid/leg_medium.png" id="9_qxas4"]
+[ext_resource type="Texture2D" uid="uid://qajx4qolviqr" path="res://Assets/Character/Mid/medium_arm.png" id="10_7xk0r"]
+[ext_resource type="Texture2D" uid="uid://do1e0h4hb0vl1" path="res://Assets/Character/Mid/medium_forearm_and_hand.png" id="11_kih7x"]
+[ext_resource type="Texture2D" uid="uid://dovncbjhrn1xd" path="res://Assets/Character/Buff/buff_body.png" id="12_ejb67"]
+[ext_resource type="Texture2D" uid="uid://dggpa5y1rqywg" path="res://Assets/Character/Buff/buff_bicep.png" id="13_x3lqf"]
+[ext_resource type="Texture2D" uid="uid://yok2tswv1vxy" path="res://Assets/Character/Buff/buff_forearm_and_hand.png" id="14_6pi0y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0oshy"]
 font_size = 32
@@ -151,9 +164,9 @@ text = "0
 label_settings = SubResource("LabelSettings_bgyye")
 
 [node name="Core" type="Label" parent="Text"]
-offset_left = 478.0
+offset_left = 390.0
 offset_top = 225.0
-offset_right = 555.0
+offset_right = 467.0
 offset_bottom = 284.0
 text = "Core
 "
@@ -169,6 +182,175 @@ text = "0
 
 "
 label_settings = SubResource("LabelSettings_bgyye")
+
+[node name="Player" type="Node" parent="."]
+script = ExtResource("3_mww1o")
+
+[node name="Face" type="Sprite2D" parent="Player"]
+z_index = 5
+position = Vector2(550, 51.375)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_xi8l0")
+
+[node name="Chest" type="Sprite2D" parent="Player"]
+position = Vector2(550, 159.375)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_0i6uj")
+
+[node name="Left Leg" type="Sprite2D" parent="Player"]
+z_index = 3
+position = Vector2(522.25, 344.625)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_38u4b")
+flip_h = true
+
+[node name="Right Leg" type="Sprite2D" parent="Player"]
+z_index = 3
+position = Vector2(577.25, 344.625)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_38u4b")
+
+[node name="Left Bicep" type="Sprite2D" parent="Player"]
+z_index = 3
+position = Vector2(460, 118.375)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("6_2cny1")
+
+[node name="Left forearm" type="Sprite2D" parent="Player"]
+z_index = 3
+position = Vector2(417, 98.375)
+scale = Vector2(0.253, 0.253)
+texture = ExtResource("7_w26pg")
+
+[node name="Right Bicep" type="Sprite2D" parent="Player"]
+z_index = 3
+position = Vector2(640, 118.375)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("6_2cny1")
+flip_h = true
+
+[node name="Right forearm" type="Sprite2D" parent="Player"]
+z_index = 3
+position = Vector2(682, 98.375)
+scale = Vector2(0.253, 0.253)
+texture = ExtResource("7_w26pg")
+flip_h = true
+
+[node name="Player mid" type="Node" parent="Player"]
+
+[node name="Chest" type="Sprite2D" parent="Player/Player mid"]
+visible = false
+position = Vector2(550, 159.375)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8_sfkf8")
+
+[node name="Left Leg" type="Sprite2D" parent="Player/Player mid"]
+visible = false
+position = Vector2(523.125, 343.125)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("9_qxas4")
+
+[node name="Right Leg" type="Sprite2D" parent="Player/Player mid"]
+visible = false
+position = Vector2(578.125, 343.125)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("9_qxas4")
+flip_h = true
+
+[node name="Left Bicep" type="Sprite2D" parent="Player/Player mid"]
+visible = false
+position = Vector2(470, 121)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("10_7xk0r")
+flip_v = true
+
+[node name="Left forearm" type="Sprite2D" parent="Player/Player mid"]
+visible = false
+position = Vector2(423, 94)
+scale = Vector2(0.253, 0.253)
+texture = ExtResource("11_kih7x")
+flip_h = true
+
+[node name="Right Bicep" type="Sprite2D" parent="Player/Player mid"]
+visible = false
+position = Vector2(630, 121)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("10_7xk0r")
+flip_h = true
+flip_v = true
+
+[node name="Right forearm" type="Sprite2D" parent="Player/Player mid"]
+visible = false
+position = Vector2(676, 94)
+scale = Vector2(0.253, 0.253)
+texture = ExtResource("11_kih7x")
+
+[node name="Player Buff" type="Node" parent="Player"]
+
+[node name="Chest" type="Sprite2D" parent="Player/Player Buff"]
+visible = false
+position = Vector2(550, 159.375)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("12_ejb67")
+
+[node name="Left Leg" type="Sprite2D" parent="Player/Player Buff"]
+visible = false
+position = Vector2(523.125, 343.125)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("9_qxas4")
+
+[node name="Right Leg" type="Sprite2D" parent="Player/Player Buff"]
+visible = false
+position = Vector2(578.125, 343.125)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("9_qxas4")
+flip_h = true
+
+[node name="Left Bicep" type="Sprite2D" parent="Player/Player Buff"]
+visible = false
+z_index = 3
+position = Vector2(454, 124)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("13_x3lqf")
+
+[node name="ColorRect" type="ColorRect" parent="Player/Player Buff/Left Bicep"]
+z_index = -3
+offset_left = 252.0
+offset_top = -76.0
+offset_right = 292.0
+offset_bottom = -36.0
+scale = Vector2(-2.44653, 3.48536)
+color = Color(0.862745, 0.686275, 0.556863, 1)
+
+[node name="Left forearm" type="Sprite2D" parent="Player/Player Buff"]
+visible = false
+position = Vector2(427, 86)
+scale = Vector2(0.253, 0.253)
+texture = ExtResource("14_6pi0y")
+
+[node name="Right Bicep" type="Sprite2D" parent="Player/Player Buff"]
+visible = false
+z_index = 3
+position = Vector2(644, 124)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("13_x3lqf")
+flip_h = true
+
+[node name="ColorRect" type="ColorRect" parent="Player/Player Buff/Right Bicep"]
+z_index = -3
+offset_left = -140.0
+offset_top = -76.0
+offset_right = -100.0
+offset_bottom = -36.0
+scale = Vector2(-2.44653, 3.48536)
+color = Color(0.862745, 0.686275, 0.556863, 1)
+
+[node name="Right forearm" type="Sprite2D" parent="Player/Player Buff"]
+visible = false
+position = Vector2(669, 86)
+scale = Vector2(0.253, 0.253)
+texture = ExtResource("14_6pi0y")
+flip_h = true
 
 [connection signal="pressed" from="VBoxContainer/Arms" to="." method="_on_arms_pressed"]
 [connection signal="pressed" from="VBoxContainer/Core" to="." method="_on_core_pressed"]

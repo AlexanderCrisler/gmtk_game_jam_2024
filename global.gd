@@ -27,6 +27,9 @@ func increaseLegs(left, right):
 func increaseAbs(score):
 	abs += score
 
+func increaseArms(left, right):
+	rightArm += right
+	leftArm += left
 
 func goto_scene(path):
 	call_deferred("_deferred_goto_scene", path)

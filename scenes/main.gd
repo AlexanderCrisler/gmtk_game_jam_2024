@@ -18,7 +18,9 @@ func _input(event : InputEvent):
 		
 
 func _ready() -> void:
+
 	
+		
 	if global.armsDone and global.legsDone and global.coreDone:
 		global.armsDone = false
 		global.legsDone = false
