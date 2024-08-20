@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b4kd6122kfv3h"]
+[gd_scene load_steps=24 format=3 uid="uid://b4kd6122kfv3h"]
 
 [ext_resource type="Script" path="res://scenes/minigames/arms/arms.gd" id="1_intui"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="2_376ig"]
@@ -20,9 +20,13 @@
 [ext_resource type="Texture2D" uid="uid://b2e6ft0ql2x5f" path="res://Assets/Keys/U.png" id="18_rrsq7"]
 [ext_resource type="Texture2D" uid="uid://bul4w7h3fnfgy" path="res://Assets/Keys/M.png" id="19_vh8qo"]
 [ext_resource type="Texture2D" uid="uid://txmd1u8w37lm" path="res://Assets/Keys/K.png" id="20_iwtpk"]
+[ext_resource type="Script" path="res://scenes/minigames/arms/timer.gd" id="21_2ga8e"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i6jv1"]
 font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_mdga5"]
+font_size = 45
 
 [node name="Arms" type="Node2D"]
 script = ExtResource("1_intui")
@@ -314,3 +318,19 @@ texture = ExtResource("19_vh8qo")
 
 [node name="Key_K" type="Sprite2D" parent="Right"]
 texture = ExtResource("20_iwtpk")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+script = ExtResource("21_2ga8e")
+
+[node name="Label" type="Label" parent="Timer"]
+offset_left = 553.0
+offset_top = 54.0
+offset_right = 593.0
+offset_bottom = 117.0
+text = "0"
+label_settings = SubResource("LabelSettings_mdga5")
+horizontal_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

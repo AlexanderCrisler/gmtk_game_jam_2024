@@ -121,3 +121,9 @@ func _input(ev):
 		
 	if Input.is_action_just_pressed("rightRep"):
 		forearmRight.global_rotation_degrees -= 8
+
+
+func _on_timer_timeout() -> void:
+	global.rightArm += repsRight
+	global.leftArm += repsLeft
+	global.goto_scene("res://scenes/main.tscn")
