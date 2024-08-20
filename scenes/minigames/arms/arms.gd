@@ -14,7 +14,6 @@ var rightRep_key3
 func _ready():
 	forearmLeft = $"Player/Left forearm"
 	forearmRight = $"Player/Right forearm"
-	pass # Replace with function body.
 	InputMap.add_action("leftRep")
 	InputMap.add_action("rightRep")
 	leftRep_key1 = InputEventKey.new()
@@ -35,6 +34,9 @@ func _process(delta):
 			InputMap.action_erase_event("leftRep", leftRep_key3)
 			#KeyChange
 			leftRep_key1.physical_keycode = KEY_T
+			$Left/Key_T.show()
+			$Left/Key_Z.hide()
+			$Left/Key_D.hide()
 			InputMap.action_add_event("leftRep", leftRep_key1)
 		#LeftStage 2
 		elif forearmLeft.global_rotation_degrees >= -90 && forearmLeft.global_rotation_degrees < -20:
@@ -42,6 +44,9 @@ func _process(delta):
 			InputMap.action_erase_event("leftRep", leftRep_key3)
 			#KeyChange
 			leftRep_key2.physical_keycode = KEY_Z
+			$Left/Key_T.hide()
+			$Left/Key_Z.show()
+			$Left/Key_D.hide()
 			InputMap.action_add_event("leftRep", leftRep_key2)
 		#LeftStage 3
 		elif (forearmLeft.global_rotation_degrees <= 20):
@@ -49,6 +54,9 @@ func _process(delta):
 			InputMap.action_erase_event("leftRep", leftRep_key2)
 			#KeyChange
 			leftRep_key3.physical_keycode = KEY_D
+			$Left/Key_T.hide()
+			$Left/Key_Z.hide()
+			$Left/Key_D.show()
 			InputMap.action_add_event("leftRep", leftRep_key3)
 		#Fall Rate left
 		#Make this a function of the number of reps so that it gets harder
@@ -56,6 +64,7 @@ func _process(delta):
 		
 	elif forearmLeft.global_rotation_degrees > 20:
 		repsLeft += 1
+		$Label_Left.text = str(repsLeft)
 		forearmLeft.global_rotation_degrees = -144
 		print("RepsLeft", repsLeft)
 		
@@ -66,6 +75,9 @@ func _process(delta):
 			InputMap.action_erase_event("rightRep", rightRep_key3)
 			#KeyChange
 			rightRep_key1.physical_keycode = KEY_U
+			$Right/Key_U.show()
+			$Right/Key_M.hide()
+			$Right/Key_K.hide()
 			InputMap.action_add_event("rightRep", rightRep_key1)
 		#RightStage 2
 		elif forearmRight.global_rotation_degrees < 80 && forearmRight.global_rotation_degrees >= 20 :
@@ -73,6 +85,9 @@ func _process(delta):
 			InputMap.action_erase_event("rightRep", rightRep_key3)
 			#KeyChange
 			rightRep_key2.physical_keycode = KEY_M
+			$Right/Key_U.hide()
+			$Right/Key_M.show()
+			$Right/Key_K.hide()
 			InputMap.action_add_event("rightRep", rightRep_key2)
 		##RightStage 3
 		elif (forearmRight.global_rotation_degrees < 20):
@@ -80,6 +95,9 @@ func _process(delta):
 			InputMap.action_erase_event("rightRep", rightRep_key2)
 			#KeyChange
 			rightRep_key3.physical_keycode = KEY_K
+			$Right/Key_U.hide()
+			$Right/Key_M.hide()
+			$Right/Key_K.show()
 			InputMap.action_add_event("rightRep", rightRep_key3)
 			
 		#Fall Rate right 
@@ -89,6 +107,7 @@ func _process(delta):
 		
 	elif forearmRight.global_rotation_degrees < -17:
 		repsRight += 1
+		$Label_Right.text = str(repsRight)
 		forearmRight.global_rotation_degrees = 147
 
 func exitArms(): 
@@ -102,3 +121,9 @@ func _input(ev):
 		
 	if Input.is_action_just_pressed("rightRep"):
 		forearmRight.global_rotation_degrees -= 8
+
+
+func _on_timer_timeout() -> void:
+	global.rightArm += repsRight
+	global.leftArm += repsLeft
+	global.goto_scene("res://scenes/main.tscn")
