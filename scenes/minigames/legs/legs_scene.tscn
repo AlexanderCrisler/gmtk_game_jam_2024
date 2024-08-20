@@ -1,9 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgfdvbdut537k"]
+[gd_scene load_steps=14 format=3 uid="uid://bgfdvbdut537k"]
 
 [ext_resource type="PackedScene" uid="uid://2el15lumkfpa" path="res://scenes/minigames/legs/Objects/Blocker.tscn" id="1_c6kh7"]
 [ext_resource type="Script" path="res://scenes/minigames/legs/legs_scene.gd" id="1_tao8e"]
 [ext_resource type="PackedScene" uid="uid://bvt1h0uawgwlc" path="res://scenes/minigames/legs/Objects/Spawner.tscn" id="2_xcfjd"]
 [ext_resource type="PackedScene" uid="uid://ckwy2747gh7gt" path="res://scenes/minigames/legs/Objects/Center.tscn" id="3_2i88y"]
+[ext_resource type="Texture2D" uid="uid://c7o65t16opguo" path="res://Assets/Keys/A.png" id="5_l1t4c"]
+[ext_resource type="Texture2D" uid="uid://cfxouebd2le0o" path="res://Assets/Keys/S.png" id="6_x64q4"]
+[ext_resource type="Texture2D" uid="uid://mqyl76l12rpv" path="res://Assets/Keys/D.png" id="7_nea56"]
+[ext_resource type="Texture2D" uid="uid://buk840cdpo7fh" path="res://Assets/Keys/W.png" id="8_jbm6m"]
+[ext_resource type="Texture2D" uid="uid://ik2lcvxvn2u6" path="res://Assets/Keys/ARROWLEFT.png" id="9_cuq0w"]
+[ext_resource type="Texture2D" uid="uid://b852mjl3k13i5" path="res://Assets/Keys/ARROWDOWN.png" id="10_lt3d7"]
+[ext_resource type="Texture2D" uid="uid://bdau405y5qc35" path="res://Assets/Keys/ARROWRIGHT.png" id="11_2mqag"]
+[ext_resource type="Texture2D" uid="uid://0qyy6m838dd3" path="res://Assets/Keys/ARROWUP.png" id="12_1iwvs"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1ho3h"]
 font_size = 32
@@ -47,5 +55,49 @@ offset_right = 854.0
 offset_bottom = 183.0
 text = "0"
 label_settings = SubResource("LabelSettings_1ho3h")
+
+[node name="WASD" type="Node2D" parent="."]
+position = Vector2(120, 100)
+
+[node name="A" type="Sprite2D" parent="WASD"]
+position = Vector2(-35, 0)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_l1t4c")
+
+[node name="S" type="Sprite2D" parent="WASD"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_x64q4")
+
+[node name="D" type="Sprite2D" parent="WASD"]
+position = Vector2(35, 0)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_nea56")
+
+[node name="W" type="Sprite2D" parent="WASD"]
+position = Vector2(0, -35)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_jbm6m")
+
+[node name="Arrow Keys" type="Node2D" parent="."]
+position = Vector2(1025, 100)
+
+[node name="A" type="Sprite2D" parent="Arrow Keys"]
+position = Vector2(-35, 0)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9_cuq0w")
+
+[node name="S" type="Sprite2D" parent="Arrow Keys"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_lt3d7")
+
+[node name="D" type="Sprite2D" parent="Arrow Keys"]
+position = Vector2(35, 0)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_2mqag")
+
+[node name="W" type="Sprite2D" parent="Arrow Keys"]
+position = Vector2(0, -35)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("12_1iwvs")
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
