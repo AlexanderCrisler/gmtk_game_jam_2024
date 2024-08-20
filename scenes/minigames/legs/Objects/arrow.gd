@@ -18,10 +18,13 @@ func _ready():
 	$Sprite2D.rotation_degrees = 90*direction
 	if(direction == 1 or direction == -1):
 		position = Vector2(position.x -direction*offset, position.y)
+		$Sprite2D.flip_v = true
 	if(direction == 2):
 		position = Vector2(position.x, position.y -offset)
+		$Sprite2D.flip_v = true
 	if(direction == 0):
 		position = Vector2(position.x, position.y +offset)
+		$Sprite2D.flip_v = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

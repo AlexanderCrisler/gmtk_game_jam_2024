@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bgfdvbdut537k"]
+[gd_scene load_steps=15 format=3 uid="uid://bgfdvbdut537k"]
 
 [ext_resource type="PackedScene" uid="uid://2el15lumkfpa" path="res://scenes/minigames/legs/Objects/Blocker.tscn" id="1_c6kh7"]
 [ext_resource type="Script" path="res://scenes/minigames/legs/legs_scene.gd" id="1_tao8e"]
@@ -12,9 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://b852mjl3k13i5" path="res://Assets/Keys/ARROWDOWN.png" id="10_lt3d7"]
 [ext_resource type="Texture2D" uid="uid://bdau405y5qc35" path="res://Assets/Keys/ARROWRIGHT.png" id="11_2mqag"]
 [ext_resource type="Texture2D" uid="uid://0qyy6m838dd3" path="res://Assets/Keys/ARROWUP.png" id="12_1iwvs"]
+[ext_resource type="Texture2D" uid="uid://vap5uuqdg46q" path="res://Assets/Backgrounds/george-pagan-iii-9GdMuamOGlc-unsplash.jpg" id="13_xth35"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1ho3h"]
 font_size = 32
+font_color = Color(0, 0, 0, 1)
 
 [node name="LegsScene" type="Node2D"]
 script = ExtResource("1_tao8e")
@@ -26,6 +28,7 @@ position = Vector2(300, 300)
 position = Vector2(300, 300)
 
 [node name="Center" parent="." instance=ExtResource("3_2i88y")]
+visible = false
 position = Vector2(300, 300)
 
 [node name="Spawner2" parent="." instance=ExtResource("2_xcfjd")]
@@ -37,6 +40,7 @@ position = Vector2(800, 300)
 leftSide = false
 
 [node name="Center2" parent="." instance=ExtResource("3_2i88y")]
+visible = false
 position = Vector2(800, 300)
 left = false
 
@@ -99,5 +103,11 @@ texture = ExtResource("11_2mqag")
 position = Vector2(0, -35)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("12_1iwvs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(680, 328)
+scale = Vector2(0.25787, 0.25787)
+texture = ExtResource("13_xth35")
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
