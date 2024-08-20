@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/minigames/legs/Objects/center.gd" id="1_dyuc6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b723v"]
-radius = 22.0227
+radius = 1.0
 
 [node name="Center" type="Node2D"]
 script = ExtResource("1_dyuc6")
@@ -12,10 +12,10 @@ script = ExtResource("1_dyuc6")
 [node name="Area2D" type="Area2D" parent="." groups=["Center"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_b723v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(3, 2)
 texture = ExtResource("1_aq2b1")
 

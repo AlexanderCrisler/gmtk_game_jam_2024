@@ -24,54 +24,54 @@ func _input(ev):
 	if leftSide:
 		if Input.is_key_pressed(KEY_A):
 			set_position(leftPos)
-			$Area2D.rotation_degrees = 90
+			
 			$Sprite2D.global_position = (startPos)
 			$Sprite2D.rotation_degrees = 0
 			$Sprite2D.flip_v = false
 			
 		if Input.is_key_pressed(KEY_W):
 			set_position(upPos)
-			$Area2D.rotation_degrees = 0
+			
 			$Sprite2D.global_position = (startPos)
 			$Sprite2D.rotation_degrees = 90
 			
 		if Input.is_key_pressed(KEY_D):
 			set_position(rightPos)
-			$Area2D.rotation_degrees = -90
+			
 			$Sprite2D.global_position = (startPos)
 			$Sprite2D.rotation_degrees = 180
 			$Sprite2D.flip_v = true
 			
 		if Input.is_key_pressed(KEY_S):
 			set_position(downPos)
-			$Area2D.rotation_degrees = 180
+			
 			$Sprite2D.global_position = (startPos)
 			$Sprite2D.rotation_degrees = -90
 			
 	else:
 		if Input.is_key_pressed(KEY_LEFT):
 			set_position(leftPos)
-			$Area2D.rotation_degrees = 90
+			
 			$Sprite2D.global_position = (startPos)
 			$Sprite2D.rotation_degrees = 0
 			$Sprite2D.flip_v = false
 			
 		if Input.is_key_pressed(KEY_UP):
 			set_position(upPos)
-			$Area2D.rotation_degrees = 0
+			
 			$Sprite2D.global_position = (startPos)
 			$Sprite2D.rotation_degrees = 90
 		
 		if Input.is_key_pressed(KEY_RIGHT):
 			set_position(rightPos)
-			$Area2D.rotation_degrees = -90
+			
 			$Sprite2D.global_position = (startPos)
 			$Sprite2D.rotation_degrees = 180
 			$Sprite2D.flip_v = true
 			
 		if Input.is_key_pressed(KEY_DOWN):
 			set_position(downPos)
-			$Area2D.rotation_degrees = 180
+			
 			$Sprite2D.global_position = (startPos)
 			$Sprite2D.rotation_degrees = -90
 		
