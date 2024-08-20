@@ -9,4 +9,5 @@ func _ready():
 
 func _input(ev):
 	if Input.is_key_pressed(KEY_W):
+		global.increaseArms(2,5)
 		global.goto_scene("res://scenes/main.tscn")
