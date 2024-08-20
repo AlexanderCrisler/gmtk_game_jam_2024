@@ -1,0 +1,184 @@
+[gd_scene load_steps=14 format=3 uid="uid://djrjxqxtbvro"]
+
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_fmbxq"]
+[ext_resource type="Texture2D" uid="uid://u35we6rreuxy" path="res://Assets/Character/face.png" id="2_4pwlh"]
+[ext_resource type="Texture2D" uid="uid://di3dbys3rdmk3" path="res://Assets/Character/Weak/weak_body.png" id="3_42axe"]
+[ext_resource type="Texture2D" uid="uid://bd0e6cjhci1cn" path="res://Assets/Character/Weak/weak_leg.png" id="4_4428o"]
+[ext_resource type="Texture2D" uid="uid://o813he8ebegg" path="res://Assets/Character/Weak/weak_bicep.png" id="5_p6ixn"]
+[ext_resource type="Texture2D" uid="uid://cf7lf78qd3uaa" path="res://Assets/Character/Weak/forearm_and_hand_weak.png" id="6_6veoh"]
+[ext_resource type="Texture2D" uid="uid://csusol0hfvo06" path="res://Assets/Character/Mid/medium_body.png" id="7_6knma"]
+[ext_resource type="Texture2D" uid="uid://bethamd3nl828" path="res://Assets/Character/Mid/leg_medium.png" id="8_wuxrc"]
+[ext_resource type="Texture2D" uid="uid://qajx4qolviqr" path="res://Assets/Character/Mid/medium_arm.png" id="9_q80bk"]
+[ext_resource type="Texture2D" uid="uid://do1e0h4hb0vl1" path="res://Assets/Character/Mid/medium_forearm_and_hand.png" id="10_77d7u"]
+[ext_resource type="Texture2D" uid="uid://dovncbjhrn1xd" path="res://Assets/Character/Buff/buff_body.png" id="11_hqfbr"]
+[ext_resource type="Texture2D" uid="uid://dggpa5y1rqywg" path="res://Assets/Character/Buff/buff_bicep.png" id="12_okse0"]
+[ext_resource type="Texture2D" uid="uid://yok2tswv1vxy" path="res://Assets/Character/Buff/buff_forearm_and_hand.png" id="13_6qbl5"]
+
+[node name="Player" type="Node"]
+script = ExtResource("1_fmbxq")
+
+[node name="Face" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(550, 51.375)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_4pwlh")
+
+[node name="Chest" type="Sprite2D" parent="."]
+position = Vector2(550, 159.375)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_42axe")
+
+[node name="Left Leg" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(522.25, 344.625)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_4428o")
+flip_h = true
+
+[node name="Right Leg" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(577.25, 344.625)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_4428o")
+
+[node name="Left Bicep" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(460, 118.375)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_p6ixn")
+
+[node name="Left forearm" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(417, 98.375)
+scale = Vector2(0.253, 0.253)
+texture = ExtResource("6_6veoh")
+
+[node name="Right Bicep" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(640, 118.375)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_p6ixn")
+flip_h = true
+
+[node name="Right forearm" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(682, 98.375)
+scale = Vector2(0.253, 0.253)
+texture = ExtResource("6_6veoh")
+flip_h = true
+
+[node name="Player mid" type="Node" parent="."]
+
+[node name="Chest" type="Sprite2D" parent="Player mid"]
+visible = false
+position = Vector2(550, 159.375)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_6knma")
+
+[node name="Left Leg" type="Sprite2D" parent="Player mid"]
+visible = false
+position = Vector2(523.125, 343.125)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8_wuxrc")
+
+[node name="Right Leg" type="Sprite2D" parent="Player mid"]
+visible = false
+position = Vector2(578.125, 343.125)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8_wuxrc")
+flip_h = true
+
+[node name="Left Bicep" type="Sprite2D" parent="Player mid"]
+visible = false
+position = Vector2(470, 121)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("9_q80bk")
+flip_v = true
+
+[node name="Left forearm" type="Sprite2D" parent="Player mid"]
+visible = false
+position = Vector2(423, 94)
+scale = Vector2(0.253, 0.253)
+texture = ExtResource("10_77d7u")
+flip_h = true
+
+[node name="Right Bicep" type="Sprite2D" parent="Player mid"]
+visible = false
+position = Vector2(630, 121)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("9_q80bk")
+flip_h = true
+flip_v = true
+
+[node name="Right forearm" type="Sprite2D" parent="Player mid"]
+visible = false
+position = Vector2(676, 94)
+scale = Vector2(0.253, 0.253)
+texture = ExtResource("10_77d7u")
+
+[node name="Player Buff" type="Node" parent="."]
+
+[node name="Chest" type="Sprite2D" parent="Player Buff"]
+visible = false
+position = Vector2(550, 159.375)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("11_hqfbr")
+
+[node name="Left Leg" type="Sprite2D" parent="Player Buff"]
+visible = false
+position = Vector2(523.125, 343.125)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8_wuxrc")
+
+[node name="Right Leg" type="Sprite2D" parent="Player Buff"]
+visible = false
+position = Vector2(578.125, 343.125)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8_wuxrc")
+flip_h = true
+
+[node name="Left Bicep" type="Sprite2D" parent="Player Buff"]
+visible = false
+z_index = 3
+position = Vector2(454, 124)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("12_okse0")
+
+[node name="ColorRect" type="ColorRect" parent="Player Buff/Left Bicep"]
+z_index = -3
+offset_left = 252.0
+offset_top = -76.0
+offset_right = 292.0
+offset_bottom = -36.0
+scale = Vector2(-2.44653, 3.48536)
+color = Color(0.862745, 0.686275, 0.556863, 1)
+
+[node name="Left forearm" type="Sprite2D" parent="Player Buff"]
+visible = false
+position = Vector2(427, 86)
+scale = Vector2(0.253, 0.253)
+texture = ExtResource("13_6qbl5")
+
+[node name="Right Bicep" type="Sprite2D" parent="Player Buff"]
+visible = false
+z_index = 3
+position = Vector2(644, 124)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("12_okse0")
+flip_h = true
+
+[node name="ColorRect" type="ColorRect" parent="Player Buff/Right Bicep"]
+z_index = -3
+offset_left = -140.0
+offset_top = -76.0
+offset_right = -100.0
+offset_bottom = -36.0
+scale = Vector2(-2.44653, 3.48536)
+color = Color(0.862745, 0.686275, 0.556863, 1)
+
+[node name="Right forearm" type="Sprite2D" parent="Player Buff"]
+visible = false
+position = Vector2(669, 86)
+scale = Vector2(0.253, 0.253)
+texture = ExtResource("13_6qbl5")
+flip_h = true
