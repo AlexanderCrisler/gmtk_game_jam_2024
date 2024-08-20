@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://bkkfb2tjc4f0w"]
 
-[ext_resource type="AudioStream" uid="uid://c2mtf0jx281ac" path="res://Music/rhythm-upbeat-drive-rock-178420.mp3" id="1_i1sa3"]
 [ext_resource type="Script" path="res://Music/music_player.gd" id="1_ifwyq"]
+[ext_resource type="AudioStream" uid="uid://pw3677hjhlrx" path="res://Music/Music - Made with Clipchamp.mp3" id="2_6rsfc"]
 
 [node name="MusicPlayer" type="Node2D"]
 script = ExtResource("1_ifwyq")
 
 [node name="Rhythm-upbeat-drive-rock-178420" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_i1sa3")
+stream = ExtResource("2_6rsfc")
 autoplay = true
 
 [node name="Timer" type="Timer" parent="."]
