@@ -176,3 +176,5 @@ label_settings = SubResource("LabelSettings_bgyye")
 [connection signal="pressed" from="VBoxContainer/Arms" to="." method="_on_arms_pressed"]
 [connection signal="pressed" from="VBoxContainer/Core" to="." method="_on_core_pressed"]
 [connection signal="pressed" from="VBoxContainer/Legs" to="." method="_on_legs_pressed"]
+
+[editable path="Player"]
