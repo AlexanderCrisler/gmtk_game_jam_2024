@@ -137,3 +137,9 @@ func _on_timer_timeout() -> void:
 	global.rightArm += repsRight
 	global.leftArm += repsLeft
 	global.goto_scene("res://scenes/main.tscn")
+	$Left/Key_Z.hide()
+	$Left/Key_T.show()
+	$Left/Key_D.hide()
+	$Right/Key_U.show()
+	$Right/Key_M.hide()
+	$Right/Key_K.hide()
