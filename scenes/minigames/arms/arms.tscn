@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b4kd6122kfv3h"]
+[gd_scene load_steps=16 format=3 uid="uid://b4kd6122kfv3h"]
 
 [ext_resource type="Script" path="res://scenes/minigames/arms/arms.gd" id="1_intui"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="2_376ig"]
@@ -14,59 +14,20 @@
 [ext_resource type="Texture2D" uid="uid://dovncbjhrn1xd" path="res://Assets/Character/Buff/buff_body.png" id="12_djibd"]
 [ext_resource type="Texture2D" uid="uid://dggpa5y1rqywg" path="res://Assets/Character/Buff/buff_bicep.png" id="13_2qd8h"]
 [ext_resource type="Texture2D" uid="uid://yok2tswv1vxy" path="res://Assets/Character/Buff/buff_forearm_and_hand.png" id="14_w7lro"]
+[ext_resource type="Script" path="res://scenes/minigames/arms/timer.gd" id="15_pvrf1"]
 
 [node name="Arms" type="Node2D"]
 script = ExtResource("1_intui")
-
-[node name="Upperarm" type="ColorRect" parent="."]
-offset_left = 473.0
-offset_top = 306.0
-offset_right = 493.0
-offset_bottom = 368.0
-
-[node name="UpperarmRight" type="ColorRect" parent="."]
-offset_left = 576.0
-offset_top = 308.0
-offset_right = 596.0
-offset_bottom = 370.0
 
 [node name="ForearmLeft" type="Sprite2D" parent="."]
 position = Vector2(483, 361)
 rotation = 1.76017
 offset = Vector2(-187, -25)
 
-[node name="MuscleBoxLeft" type="ColorRect" parent="ForearmLeft"]
-anchors_preset = -1
-anchor_left = 56.75
-anchor_top = 9.0
-anchor_right = 57.345
-anchor_bottom = 9.0
-offset_left = -63.984
-offset_top = -9.81772
-offset_right = 0.420956
-offset_bottom = 8.18228
-rotation = 0.177187
-pivot_offset = Vector2(57, 9)
-metadata/_edit_lock_ = true
-
 [node name="ForearmRight" type="Sprite2D" parent="."]
 position = Vector2(585, 364)
 rotation = 1.06148
 offset = Vector2(-187, -25)
-
-[node name="MuscleBoxRight" type="ColorRect" parent="ForearmRight"]
-anchors_preset = -1
-anchor_left = 56.75
-anchor_top = 9.0
-anchor_right = 57.345
-anchor_bottom = 9.0
-offset_left = -63.984
-offset_top = -9.81772
-offset_right = 0.420956
-offset_bottom = 8.18228
-rotation = 0.177187
-pivot_offset = Vector2(57, 9)
-metadata/_edit_lock_ = true
 
 [node name="Player" type="Node2D" parent="."]
 position = Vector2(27, 111)
@@ -259,3 +220,19 @@ scale = Vector2(0.253, 0.253)
 texture = ExtResource("14_w7lro")
 offset = Vector2(470.356, -660.079)
 flip_h = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+script = ExtResource("15_pvrf1")
+
+[node name="Label" type="Label" parent="Timer"]
+offset_left = 553.0
+offset_top = 54.0
+offset_right = 593.0
+offset_bottom = 77.0
+text = "0
+"
+horizontal_alignment = 1
+
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
